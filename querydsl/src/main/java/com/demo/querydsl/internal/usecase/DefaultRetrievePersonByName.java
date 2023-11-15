@@ -1,7 +1,7 @@
 package com.demo.querydsl.internal.usecase;
 
 import com.demo.querydsl.api.specificaion.PersonSpecification;
-import com.demo.querydsl.api.usecase.RerievePersonByName;
+import com.demo.querydsl.api.usecase.RetrievePersonByName;
 import com.demo.querydsl.internal.entity.Person;
 import com.demo.querydsl.internal.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultRerievePersonByName implements RerievePersonByName {
+public class DefaultRetrievePersonByName implements RetrievePersonByName {
 
     private final PersonRepository personRepository;
 

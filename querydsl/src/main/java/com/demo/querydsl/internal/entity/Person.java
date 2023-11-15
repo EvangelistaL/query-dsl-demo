@@ -1,11 +1,11 @@
 package com.demo.querydsl.internal.entity;
 
-import com.querydsl.core.annotations.QueryEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,7 +22,14 @@ public class Person implements Serializable {
     @Column(name = "born_date")
     private LocalDate bornDate;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH ,CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "person_id")
-    private BirthPlace birthPlace;
+    @ManyToMany(
+            cascade = {CascadeType.MERGE, CascadeType.DETACH ,CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.LAZY
+    )
+    @JoinTable(
+            name = "person_birth_place",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "birth_place_id")
+    )
+    private List<BirthPlace> birthPlace;
 }

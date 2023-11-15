@@ -15,17 +15,20 @@ public class BirthPlace implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "country")
-    private String country;
-
     @Column(name = "state")
     private String state;
 
     @Column(name = "city")
     private String city;
 
-    @OneToMany(mappedBy = "birthPlace",
+    @ManyToMany(
             cascade = {CascadeType.MERGE, CascadeType.DETACH ,CascadeType.PERSIST, CascadeType.REFRESH},
             fetch = FetchType.LAZY)
+
+    @JoinTable(
+            name = "person_birth_place",
+            joinColumns = @JoinColumn(name = "birth_place_id"),
+            inverseJoinColumns = @JoinColumn(name = "person_id")
+    )
     private List<Person> persons;
 }

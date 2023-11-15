@@ -4,7 +4,7 @@ import com.demo.querydsl.internal.entity.Person;
 
 import java.time.LocalDate;
 
-public interface RerievePersonByNameAndBornDate {
+public interface RetrievePersonByNameAndBornDate {
 
     Person execute(String personName, LocalDate bornDate);
 }
