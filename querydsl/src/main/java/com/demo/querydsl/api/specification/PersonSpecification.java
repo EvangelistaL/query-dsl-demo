@@ -1,4 +1,4 @@
-package com.demo.querydsl.api.specificaion;
+package com.demo.querydsl.api.specification;
 
 import com.demo.querydsl.internal.entity.QPerson;
 import com.querydsl.core.types.Predicate;

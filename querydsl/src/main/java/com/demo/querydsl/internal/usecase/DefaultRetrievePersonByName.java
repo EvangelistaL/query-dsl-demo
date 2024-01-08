@@ -1,6 +1,6 @@
 package com.demo.querydsl.internal.usecase;
 
-import com.demo.querydsl.api.specificaion.PersonSpecification;
+import com.demo.querydsl.api.specification.PersonSpecification;
 import com.demo.querydsl.api.usecase.RetrievePersonByName;
 import com.demo.querydsl.internal.entity.Person;
 import com.demo.querydsl.internal.repository.PersonRepository;
